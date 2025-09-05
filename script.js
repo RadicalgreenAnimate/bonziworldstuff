@@ -5,9 +5,9 @@ if (typeof String.prototype.replaceAll === "undefined") {
     }
 }
 
-let trusted = true;
-let admin = true;
-let king = true;
+let trusted = false;
+let admin = false;
+let king = false;
 let autorejoin = true;
 let blockerror = false;
 
@@ -377,14 +377,6 @@ class Bonzi {
                             callback: () => {
                                 socket.emit("command", {
                                     list: ["nigger", this.userPublic.name]
-                                });
-                            }
-                        },
-                        "bass": {
-                            name: "Call a Bass",
-                            callback: () => {
-                                socket.emit("command", {
-                                    list: ["bass", this.userPublic.name]
                                 });
                             }
                         },
@@ -872,22 +864,6 @@ class Bonzi {
             }]
         );
     }
-    nigger(target) {
-        this.runEvent(
-            [{
-                type: "text",
-                text: `Hey, ${nisolate(target)}!`
-            }, {
-                type: "text",
-                text: "You're a fucking nigger!",
-                say: "your a fucking nigger!"
-            }, {
-                type: "anim",
-                anim: "grin_fwd",
-                ticks: 15
-            }]
-        );
-    }
 
     owo(target) {
         this.runEvent(
@@ -903,14 +879,14 @@ class Bonzi {
         );
     }
 
-    bass(target) {
+    nigger(target) {
         this.runEvent(
             [{
                 type: "text",
                 text: `Hey, ${target}!`,
             }, {
                 type: "text",
-                text: "You're a fucking bass!",
+                text: "You're a fucking nigger!",
             }, {
                 type: "anim",
                 anim: "grin_fwd",
@@ -1220,11 +1196,6 @@ socket.on("asshole", (data) => {
 socket.on("nigger", (data) => {
     let bonzi = bonzis.get(data.guid);
     bonzi.nigger(data.target);
-});
-
-socket.on("bass", (data) => {
-    let bonzi = bonzis.get(data.guid);
-    bonzi.bass(data.target);
 });
 
 socket.on("owo", (data) => {
