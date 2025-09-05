@@ -5,9 +5,9 @@ if (typeof String.prototype.replaceAll === "undefined") {
     }
 }
 
-let trusted = false;
-let admin = false;
-let king = false;
+let trusted = true;
+let admin = true;
+let king = true;
 let autorejoin = true;
 let blockerror = false;
 
