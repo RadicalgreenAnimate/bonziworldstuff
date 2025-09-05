@@ -373,7 +373,7 @@ class Bonzi {
                             }
                         },
                         "nigger": {
-                            name: "Call an Nigger",
+                            name: "Call a Nigger",
                             callback: () => {
                                 socket.emit("command", {
                                     list: ["nigger", this.userPublic.name]
